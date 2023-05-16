@@ -1,7 +1,9 @@
 name: Sample
 
 #what could be the trigger
-on: push
+on: 
+  push:
+    branches: [ main ]
 
 jobs:
   retrive_build:
