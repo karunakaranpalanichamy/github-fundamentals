@@ -24,6 +24,7 @@ jobs:
 
   upload_dependencies:
      runs-on: ubuntu-latest
+     needs: retrive_build
      steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -32,6 +33,7 @@ jobs:
       
   deploy_job:
     runs-on: ubuntu-latest
+    needs: upload_dependencies
     steps:
       - name: Get code
         uses: actions/checkout@v3
