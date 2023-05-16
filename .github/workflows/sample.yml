@@ -1,0 +1,20 @@
+name: Sample
+#what could be the trigger
+on: push
+jobs:
+  retrive_build:
+    runs_on: ubuntu-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v3
+        
+      - name: Form the source and destination json
+        run: echo retrieve job is forming the source and destination json
+      
+      - name: Upload dependencies
+        run: echo uploading the dependencies
+      
+      - name: deploy 
+        run: echo run deployment
+        
+    
