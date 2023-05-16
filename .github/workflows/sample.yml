@@ -1,6 +1,8 @@
 name: Sample
+
 #what could be the trigger
 on: push
+
 jobs:
   retrive_build:
     runs-on: ubuntu-latest
@@ -11,7 +13,7 @@ jobs:
       - name: Form the source and destination json
         run: echo retrieve job is forming the source and destination json
       
-      
+
    upload_dependencies:
      runs-on: ubuntu-latest
      steps:
