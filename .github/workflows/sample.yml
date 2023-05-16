@@ -3,7 +3,7 @@ name: Sample
 on: push
 jobs:
   retrive_build:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: Get code
         uses: actions/checkout@v3
