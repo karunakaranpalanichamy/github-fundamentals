@@ -36,6 +36,8 @@ jobs:
      steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: get build artifacts
+        uses: actions/download-artifact@v3
       - name: Upload dependencies
         run: echo uploading the dependencies
       
