@@ -18,6 +18,11 @@ jobs:
     steps: 
       - name: Get code
         uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.terraform
+          key: terraform-folder-${{hashFiles('.terraform.lock.hcl')}}
       - name: install terraform
         uses: hashicorp/setup-terraform@v1
 
@@ -27,6 +32,11 @@ jobs:
      steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.terraform
+          key: terraform-folder-${{hashFiles('.terraform.lock.hcl')}}
       - name: install terraform
         uses: hashicorp/setup-terraform@v1
       - name: Upload dependencies
@@ -38,6 +48,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.terraform
+          key: terraform-folder-${{hashFiles('.terraform.lock.hcl')}}
       - name: install terraform
         uses: hashicorp/setup-terraform@v1
       - name: deploy 
