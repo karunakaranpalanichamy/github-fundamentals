@@ -38,6 +38,8 @@ jobs:
         uses: actions/checkout@v3
       - name: get build artifacts
         uses: actions/download-artifact@v3
+        with:
+          name: source.txt
       - name: Upload dependencies
         run: echo uploading the dependencies
       
