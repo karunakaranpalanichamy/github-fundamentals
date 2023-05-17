@@ -24,14 +24,14 @@ jobs:
        
       
     
-  test:
+  deploy:
     needs: build
-   # if: failure()
+    if: failure()
     runs-on: ubuntu-latest
     steps: 
       - name: Get code
         uses: actions/checkout@v3
    
-      - name: build
-        run: echo test
+      - name: deploy
+        run: echo deploy
       
