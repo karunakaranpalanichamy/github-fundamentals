@@ -1,0 +1,33 @@
+name: execution-flow
+
+#what could be the trigger
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main,master ]
+  pull_request:
+    branches: none # [ main ]
+  
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v3
+      - run: mkdir -p path/to/artifact
+      - run: echo source > path/to/artifact/source.txt
+
+      - name: build
+        run: echo building the job
+        id: build_job
+      
+      - name: artifact source abd destination actions
+        #if: ${{ steps.build_job }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: source.txt
+          path: path/to/artifact/source.txt
