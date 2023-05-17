@@ -1,4 +1,4 @@
-name: execution-flow
+name: execution-flow-if
 
 #what could be the trigger
 # Controls when the workflow will run
