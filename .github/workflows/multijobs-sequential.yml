@@ -25,10 +25,10 @@ jobs:
         run: echo retrieve job is forming the source and destination json
 
       - name: artifact source abd destination actions
-       uses: actions/upload-artifact@v3
-       with:
-         name: source.txt
-         path: path/to/artifact/source.txt
+        uses: actions/upload-artifact@v3
+        with:
+          name: source.txt
+          path: path/to/artifact/source.txt
 
   upload_dependencies:
      runs-on: ubuntu-latest
