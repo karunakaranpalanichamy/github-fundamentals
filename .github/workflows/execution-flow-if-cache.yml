@@ -1,4 +1,4 @@
-name: execution-flow
+name: execution-flow-if
 
 #what could be the trigger
 # Controls when the workflow will run
@@ -18,15 +18,14 @@ jobs:
     steps: 
       - name: Get code
         uses: actions/checkout@v3
-      - run: mkdir -p path/to/artifact
-      - run: echo source > path/to/artifact/source.txt
-
-      - name: build
-        run: exit 1
-       
-      - name: artifact source abd destination actions
-        
-        uses: actions/upload-artifact@v3
+     
+      - name: check cache
+        uses: actions/cache@v3
+        id: cache
         with:
-          name: source.txt
-          path: path/to/artifact/source.txt
+          path: ~/.terraform
+          key: terraform-folder-${{hashFiles('.terraform.lock.hcl')}}
+      
+      - name: install depencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: hashicorp/setup-terraform@v1

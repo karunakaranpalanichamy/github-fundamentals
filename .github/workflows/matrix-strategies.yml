@@ -21,5 +21,7 @@ jobs:
     steps:
       - uses: hashicorp/setup-terraform@v2
         with:
-          node-version: ${{ matrix.version }}
+          terraform_version: ${{ matrix.version }}
+      - name: run pipeline-tests
+        run: echo running pipeline tests
      
