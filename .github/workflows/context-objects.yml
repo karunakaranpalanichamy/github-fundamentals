@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display context objext
-        run: echo "${{toJSON(github)}}"
+        run: echo "${{github.run_id}}"
