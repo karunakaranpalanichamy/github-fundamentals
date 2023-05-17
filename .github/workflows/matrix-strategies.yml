@@ -13,7 +13,7 @@ on:
 jobs:
   #build:
     # The type of runner that the job will run on
-  run_pipeline_tests_with_multiple_tf_version:
+  run_pipeline_tests:
     strategy:
       matrix:
         version: [0.14.7, 1.1.7]
