@@ -22,10 +22,11 @@ jobs:
       - run: echo source > path/to/artifact/source.txt
 
       - name: build
-        run: echo building the job
-       
+        run: exit 1
+        id: build_job
+      
       - name: artifact source abd destination actions
-     
+        if: failure() && steps.build_job.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: source.txt
