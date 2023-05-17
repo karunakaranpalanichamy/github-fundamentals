@@ -16,7 +16,6 @@ jobs:
   example_matrix:
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-20.04]
         version: [0.14.7, 1.1.7]
     runs-on: ubuntu-22.04
     steps:
