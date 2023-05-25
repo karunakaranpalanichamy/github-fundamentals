@@ -28,7 +28,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: source.txt
-          path: path/to/artifact/source.txt
+          path: path
+          
 
   upload_dependencies:
      runs-on: ubuntu-latest
